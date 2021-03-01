@@ -1,0 +1,20 @@
+<h2>Data Binding</h2>
+
+<h3>String Interpolation</h3>
+
+<p>Me llamo {{nombre}}</p>
+<p>Me llamo {{getNombre()}}</p>
+
+<h3>Property Binding</h3>
+
+<input type="text" disabled="estaDeshabilitado">
+<input type="text" [disabled]="estaDeshabilitado" [placeholder]="nombre" (input)="cambiarNombre($event)">
+<!-- <input type="text" [disabled]="estaDeshabilitado" placeholder="{{nombre}}"> -->
+
+<h3>Event Binding</h3>
+
+<button type="button" (click)="toggleDeshabilitado($event)">Deshabilitar/Habilitar escritura</button>
+
+
+<h3>2Way Binding</h3>
+<input type="text" [(ngModel)]="nombre">
