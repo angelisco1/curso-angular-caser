@@ -8,6 +8,11 @@ import { CmpDataBindingComponent } from './cmp-data-binding/cmp-data-binding.com
 import { CmpInputOutputComponent } from './cmp-input-output/cmp-input-output.component';
 import { CmpMsgComponent } from './cmp-input-output/cmp-msg/cmp-msg.component';
 import { SugusComponent } from './cmp-input-output/sugus/sugus.component';
+import { CmpCvComponent } from './cmp-cv/cmp-cv.component';
+import { CmpCvFormComponent } from './cmp-cv/cmp-cv-form/cmp-cv-form.component';
+import { CmpCvPreviewComponent } from './cmp-cv/cmp-cv-preview/cmp-cv-preview.component';
+import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
+import { CambiarSimboloPipe } from './cmp-pipes/cambiar-simbolo.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { SugusComponent } from './cmp-input-output/sugus/sugus.component';
     CmpDataBindingComponent,
     CmpInputOutputComponent,
     CmpMsgComponent,
-    SugusComponent
+    SugusComponent,
+    CmpCvComponent,
+    CmpCvFormComponent,
+    CmpCvPreviewComponent,
+    CmpPipesComponent,
+    CambiarSimboloPipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<h2>CV Interactivo</h2>
+
+
+
+<app-cmp-cv-form
+  [nombre]="datosPersona.nombre"
+  [apellidos]="datosPersona.apellidos"
+  [trabajo]="datosPersona.trabajo"
+  (datoCambiado)="cambiarDatosPersona($event)"
+></app-cmp-cv-form>
+
+<app-cmp-cv-preview
+  [nombreCompleto]="getNombreCompleto()"
+  [trabajo]="datosPersona.trabajo"
+></app-cmp-cv-preview>
