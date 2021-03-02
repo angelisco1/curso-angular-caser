@@ -3,3 +3,10 @@
 <app-cmp-msg texto="Hola" fecha="ayer"></app-cmp-msg>
 <app-cmp-msg texto="Hola, que tal??" fecha="ayer"></app-cmp-msg>
 <app-cmp-msg texto="Bien, y tu??" fecha="hoy"></app-cmp-msg>
+
+<app-sugus
+  [sabor]="sugus[0].sabor"
+  [color]="sugus[0].color"
+  (saborCambiado)="cambiarSaborSugus($event)"
+></app-sugus>
+<app-sugus [sabor]="sugus[1].sabor" [color]="sugus[1].color"></app-sugus>
