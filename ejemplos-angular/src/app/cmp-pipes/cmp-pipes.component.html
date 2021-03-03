@@ -3,11 +3,17 @@
 <div>
   <h4>{{producto.titulo | titlecase}}</h4>
 
-  <p>Precio: {{producto.precio | currency:'EUR' | cambiarSimbolo}}</p>
+  <p>Precio: {{producto.precio | currency:'EUR' | cambiarSimbolo:'D'}}</p>
   <p>Precio: {{producto.precio | currency:'EUR' | cambiarSimbolo:'I'}}</p>
 
   <p>Fecha lanzamiento: {{producto.fechaLanzamiento | date:'dd/MMMM/yyyy'}}</p>
   <p>{{producto.descripcion | slice:0:100}}...</p>
+  <p>{{producto.descripcion | hideWords:palabrasAOcultar}}</p>
 </div>
 
 <pre>{{producto | json}}</pre>
+
+
+<!-- <pre>{{getTareas() | async}}</pre> -->
+<pre>{{tareas | async | json}}</pre>
+<!-- <pre>{{tareas | json}}</pre> -->
