@@ -1,0 +1,47 @@
+<h2>Directivas</h2>
+
+<p *ngIf="seMuestra">Se muestra</p>
+
+<!-- <p *ngIf="seMuestra; else parteDelElse">Se muestra</p> -->
+
+<div *ngIf="seMuestra; then parteDelIf else parteDelElse"></div>
+
+<ng-template #parteDelIf>
+  <p>Se muestra (por el IF)</p>
+</ng-template>
+
+<ng-template #parteDelElse>
+  <p>Se muestra (por el ELSE)</p>
+</ng-template>
+
+<p [hidden]="seMuestra">Con el ngShow</p>
+
+<ul>
+  <li *ngFor="let mascota of mascotas; let pos = index; let esUltimo = last">
+    {{pos}}: {{mascota | titlecase}}
+    <span *ngIf="esUltimo">Es la última mascota</span>
+  </li>
+</ul>
+
+<p *ngFor="let obj of persona | keyvalue">
+  {{obj.key}}: {{obj.value}}
+</p>
+<p>
+  {{persona | json}}
+</p>
+
+
+<div [ngSwitch]="miMascota">
+  <ng-container *ngFor="let mascota of mascotas">
+    <p *ngSwitchCase="mascota">Tengo un {{mascota}}</p>
+  </ng-container>
+  <!-- <p *ngSwitchCase="perro">Tengo un perro</p>
+  <p *ngSwitchCase="'gato'">Tengo un gato</p>
+  <p *ngSwitchCase="'canario'">Tengo un canario</p> -->
+  <p *ngSwitchDefault>No tengo ninguna mascota de las anteriores</p>
+</div>
+
+
+<p appBlink>Si pasas el ratón por encima, parpadea</p>
+
+<!-- <button appBlink>Si pasas el ratón por encima, parpadea</button> -->
