@@ -1,6 +1,7 @@
 <h2>Directivas</h2>
 
 <p *ngIf="seMuestra">Se muestra</p>
+<button (click)="seMuestra = !seMuestra">Cambiar seMuestra</button>
 
 <!-- <p *ngIf="seMuestra; else parteDelElse">Se muestra</p> -->
 
@@ -16,8 +17,20 @@
 
 <p [hidden]="seMuestra">Con el ngShow</p>
 
+
 <ul>
   <li *ngFor="let mascota of mascotas; let pos = index; let esUltimo = last">
+    {{pos}}: {{mascota | titlecase}}
+    <span *ngIf="esUltimo">Es la última mascota</span>
+  </li>
+</ul>
+
+<!-- <input type="text" placeholder="mascota" (change)="addMascota($event.target.value)"> -->
+<input type="text" placeholder="mascota" #nuevaMascota>
+<button type="button" (click)="addMascota(nuevaMascota.value)">Añadir mascota</button>
+
+<ul>
+  <li *ngFor="let mascota of mascotas | filtro:'ri'; let pos = index; let esUltimo = last">
     {{pos}}: {{mascota | titlecase}}
     <span *ngIf="esUltimo">Es la última mascota</span>
   </li>
@@ -35,13 +48,13 @@
   <ng-container *ngFor="let mascota of mascotas">
     <p *ngSwitchCase="mascota">Tengo un {{mascota}}</p>
   </ng-container>
-  <!-- <p *ngSwitchCase="perro">Tengo un perro</p>
+  <!-- <p *ngSwitchCase="'perro'">Tengo un perro</p>
   <p *ngSwitchCase="'gato'">Tengo un gato</p>
   <p *ngSwitchCase="'canario'">Tengo un canario</p> -->
   <p *ngSwitchDefault>No tengo ninguna mascota de las anteriores</p>
 </div>
 
-
 <p appBlink>Si pasas el ratón por encima, parpadea</p>
-
-<!-- <button appBlink>Si pasas el ratón por encima, parpadea</button> -->
+<p [appBlink]="{miColor: 'yellow', colorInicial: 'white', interval: 1000}">Si pasas el ratón por encima, parpadea</p>
+<!-- <p appBlink="blue">Si pasas el ratón por encima, parpadea</p>
+<p appBlink="red">Si pasas el ratón por encima, parpadea</p> -->

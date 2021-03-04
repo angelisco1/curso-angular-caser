@@ -17,6 +17,8 @@ export class CmpCvFormComponent implements OnInit {
   @Input() trabajo: string = '';
   @Output() datoCambiado = new EventEmitter<ICambios>();
 
+  @Input() funcionExterna: Function;
+
   constructor() { }
 
   ngOnInit(): void {

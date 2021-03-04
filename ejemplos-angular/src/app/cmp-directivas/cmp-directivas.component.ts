@@ -26,4 +26,10 @@ export class CmpDirectivasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addMascota(nuevaMascota) {
+    // console.log(nuevaMascota);
+    // this.mascotas.push(nuevaMascota);
+    // this.mascotas = [].concat(this.mascotas, nuevaMascota);
+    this.mascotas = [...this.mascotas, nuevaMascota];
+  }
 }

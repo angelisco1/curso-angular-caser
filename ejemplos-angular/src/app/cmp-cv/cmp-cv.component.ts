@@ -25,4 +25,8 @@ export class CmpCvComponent implements OnInit {
   cambiarDatosPersona(event) {
     this.datosPersona[event.key] = event.val;
   }
+
+  fn() {
+    alert('Alert')
+  }
 }
