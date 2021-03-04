@@ -1,0 +1,4 @@
+<div [ngSwitch]="key">
+  <p *ngSwitchCase="'required'">El campo es obligatorio</p>
+  <p *ngSwitchCase="'minlength'">El campo tiene {{error.minlength.actualLength}}/{{error.minlength.requiredLength}}</p>
+</div>

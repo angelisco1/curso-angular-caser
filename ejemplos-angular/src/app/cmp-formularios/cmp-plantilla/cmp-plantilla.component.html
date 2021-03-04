@@ -1,0 +1,35 @@
+<h3>De plantilla</h3>
+
+<form #formulario="ngForm" (ngSubmit)="registrate(formulario)">
+  <div>
+    <label for="usuario">Usuario</label>
+    <input type="text" id="usuario" name="usuario"
+            [ngModel]="datosIniciales.usuario"
+            required
+            #usuario="ngModel"
+    >
+    <app-error-form *ngIf="usuario.errors" [error]="usuario.errors"></app-error-form>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email"
+            [ngModel]="datosIniciales.email"
+            required
+            #email="ngModel"
+    >
+    <app-error-form *ngIf="email.errors" [error]="email.errors"></app-error-form>
+  </div>
+  <div>
+    <label for="password">Contraseña</label>
+    <input type="password" id="password" name="password"
+            [ngModel]="datosIniciales.password"
+            required
+            minlength="5"
+            #password="ngModel"
+    >
+    <app-error-form *ngIf="password.errors" [error]="password.errors"></app-error-form>
+  </div>
+  <button type="submit" [disabled]="formulario.invalid">Guardar datos</button>
+</form>
+
+<pre>{{datosIniciales | json}}</pre>
