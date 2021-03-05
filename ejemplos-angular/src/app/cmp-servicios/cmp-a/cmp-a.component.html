@@ -1,0 +1,9 @@
+<h3>Cmp A</h3>
+
+<input type="text" #inputMsg>
+<button type="button" (click)="enviarMsgAChat(inputMsg.value)">Enviar mensaje</button>
+<button type="button" (click)="enviarMsgAB(inputMsg.value)">Enviar mensaje a CMP-B</button>
+
+<ul>
+  <li *ngFor="let msg of mensajes">{{msg}}</li>
+</ul>

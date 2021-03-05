@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -21,6 +21,12 @@ import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.compo
 import { CmpReactivosComponent } from './cmp-formularios/cmp-reactivos/cmp-reactivos.component';
 import { CmpPlantillaComponent } from './cmp-formularios/cmp-plantilla/cmp-plantilla.component';
 import { ErrorFormComponent } from './cmp-formularios/error-form/error-form.component';
+import { CmpServiciosComponent } from './cmp-servicios/cmp-servicios.component';
+import { CmpAComponent } from './cmp-servicios/cmp-a/cmp-a.component';
+import { CmpBComponent } from './cmp-servicios/cmp-b/cmp-b.component';
+import { LogService } from './cmp-servicios/log.service';
+import { DatosService } from './cmp-servicios/datos.service';
+import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +48,20 @@ import { ErrorFormComponent } from './cmp-formularios/error-form/error-form.comp
     CmpFormulariosComponent,
     CmpReactivosComponent,
     CmpPlantillaComponent,
-    ErrorFormComponent
+    ErrorFormComponent,
+    CmpServiciosComponent,
+    CmpAComponent,
+    CmpBComponent,
+    CmpObservablesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    // DatosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
