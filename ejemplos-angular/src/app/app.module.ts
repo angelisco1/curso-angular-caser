@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -29,6 +29,7 @@ import { LogService } from './cmp-servicios/log.service';
 import { DatosService } from './cmp-servicios/datos.service';
 import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
 import { CmpHttpComponent } from './cmp-http/cmp-http.component';
+import { AuthService } from './cmp-http/auth.service';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { CmpHttpComponent } from './cmp-http/cmp-http.component';
   ],
   providers: [
     // DatosService
+    { provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true },
   ],
   bootstrap: [AppComponent]
 })
