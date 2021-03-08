@@ -1,0 +1,10 @@
+<h2>HTTP</h2>
+
+<button type="button" (click)="crearConcepto()">Crear nuevo concepto</button>
+
+<ul>
+  <li *ngFor="let concepto of conceptos">
+    {{concepto.concepto}} ({{concepto.cantidad | currency:'EUR' | cambiarSimbolo}})
+    <button type="button" (click)="eliminar(concepto.id)">Eliminar</button>
+  </li>
+</ul>

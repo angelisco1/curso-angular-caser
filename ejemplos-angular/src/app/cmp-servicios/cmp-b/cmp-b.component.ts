@@ -27,5 +27,4 @@ export class CmpBComponent implements OnInit {
   enviarMsgAChat(nuevoMsg) {
     this.datosServ.addMensaje(nuevoMsg);
   }
-
 }
