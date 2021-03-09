@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Routing } from './cmp-routing/app.routes';
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -30,6 +31,12 @@ import { DatosService } from './cmp-servicios/datos.service';
 import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
 import { CmpHttpComponent } from './cmp-http/cmp-http.component';
 import { AuthService } from './cmp-http/auth.service';
+import { CmpViewchildComponent } from './cmp-viewchild/cmp-viewchild.component';
+import { CmpRoutingComponent } from './cmp-routing/cmp-routing.component';
+import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario.component';
+import { UsuariosComponent } from './cmp-routing/usuarios/usuarios.component';
+import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.component';
+import { EditarUsuarioComponent } from './cmp-routing/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -56,13 +63,20 @@ import { AuthService } from './cmp-http/auth.service';
     CmpAComponent,
     CmpBComponent,
     CmpObservablesComponent,
-    CmpHttpComponent
+    CmpHttpComponent,
+    CmpViewchildComponent,
+    CmpRoutingComponent,
+    NuevoUsuarioComponent,
+    UsuariosComponent,
+    InfoUsuarioComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Routing
   ],
   providers: [
     // DatosService

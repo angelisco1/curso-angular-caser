@@ -16,5 +16,21 @@
     <input type="password" id="password" formControlName="password">
     <app-error-form *ngIf="formulario.controls.password.errors" [error]="formulario.controls.password.errors"></app-error-form>
   </div>
+
+  <div>
+    <label for="pais">País</label>
+    <select formControlName="pais" id="pais">
+      <option value="es">España</option>
+      <option value="fr">Francia</option>
+      <option value="it">Italia</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="telefono">Teléfono</label>
+    <input type="tel" id="telefono" formControlName="telefono">
+    <!-- <app-error-form *ngIf="formulario.errors" [error]="formulario.errors"></app-error-form> -->
+  </div>
+
   <button type="submit" [disabled]="formulario.invalid">Guardar datos</button>
 </form>
