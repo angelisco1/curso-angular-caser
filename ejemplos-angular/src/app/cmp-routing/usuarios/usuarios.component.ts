@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from '../usuarios.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
-
-  constructor() { }
+  usuarios: Array<any> = [];
+  constructor(private usuariosServ: UsuariosService) { }
 
   ngOnInit(): void {
+    this.usuariosServ.getUsuarios().subscribe((usuarios: Array<any>) => {
+      this.usuarios = usuarios;
+    });
   }
-
 }

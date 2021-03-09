@@ -1,1 +1,13 @@
-<p>usuarios works!</p>
+<h3>Usuarios</h3>
+
+<ul>
+  <li *ngFor="let usuario of usuarios">
+    {{usuario.name}}
+    <a [routerLink]="[usuario.id, 'info']">Ver info</a>
+    <a [routerLink]="[usuario.id, 'editar']">Editar</a>
+  </li>
+</ul>
+
+<hr>
+
+<router-outlet></router-outlet>
