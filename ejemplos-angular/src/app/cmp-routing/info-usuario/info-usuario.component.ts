@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-info-usuario',
@@ -8,11 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class InfoUsuarioComponent implements OnInit {
   id = '';
-  constructor(private activatedRoute: ActivatedRoute) { }
+  usuario = {};
+  constructor(private activatedRoute: ActivatedRoute, private location: Location) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
       this.id = params.get('usuarioId');
     })
+
+    const state: any = this.location.getState();
+    this.usuario = state.usuario;
   }
 }

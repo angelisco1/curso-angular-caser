@@ -3,7 +3,7 @@
 <ul>
   <li *ngFor="let usuario of usuarios">
     {{usuario.name}}
-    <a [routerLink]="[usuario.id, 'info']">Ver info</a>
+    <a [routerLink]="[usuario.id, 'info']" [state]="{usuario: usuario, otraProp: 2}">Ver info</a>
     <a [routerLink]="[usuario.id, 'editar']">Editar</a>
   </li>
 </ul>

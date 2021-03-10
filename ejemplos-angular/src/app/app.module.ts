@@ -37,6 +37,9 @@ import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario
 import { UsuariosComponent } from './cmp-routing/usuarios/usuarios.component';
 import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.component';
 import { EditarUsuarioComponent } from './cmp-routing/editar-usuario/editar-usuario.component';
+import { ErrorComponent } from './cmp-routing/error/error.component';
+import { TiempoComponent } from './cmp-routing/tiempo/tiempo.component';
+import { NoticiasComponent } from './cmp-routing/noticias/noticias.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,10 @@ import { EditarUsuarioComponent } from './cmp-routing/editar-usuario/editar-usua
     NuevoUsuarioComponent,
     UsuariosComponent,
     InfoUsuarioComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    ErrorComponent,
+    TiempoComponent,
+    NoticiasComponent
   ],
   imports: [
     BrowserModule,

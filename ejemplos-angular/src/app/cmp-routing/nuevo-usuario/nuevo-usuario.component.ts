@@ -17,7 +17,7 @@ export class NuevoUsuarioComponent implements OnInit {
     console.log('Guardando datos...')
 
     setTimeout(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/'], { state: { usuario: {nombre: ''}} });
     }, 1000);
   }
 }

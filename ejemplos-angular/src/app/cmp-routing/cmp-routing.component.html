@@ -5,6 +5,7 @@
     <ul>
       <li><a [routerLink]="['/']">Usuarios</a></li>
       <li><a [routerLink]="['/nuevo-usuario']">Nuevo usuario</a></li>
+      <li><a [routerLink]="['/admin']">Admin</a></li>
       <!-- <li><a [routerLink]="['/4']">Usuario 4</a></li>
       <li><a [routerLink]="['/73']">Usuario 73</a></li> -->
     </ul>
@@ -12,6 +13,18 @@
 </header>
 
 <router-outlet></router-outlet>
+
+<hr>
+<hr>
+
+<nav>
+  <ul>
+    <li><a [routerLink]="{outlets: {regionAux: 'tiempo'}}">Tiempo</a></li>
+    <li><a [routerLink]="{outlets: {regionAux: 'noticias'}}">Noticias</a></li>
+  </ul>
+</nav>
+
+<router-outlet name="regionAux"></router-outlet>
 
 <!-- /usuarios/35/detalle
 ="['/usuarios', 35, 'detalle']"
